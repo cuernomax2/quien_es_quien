@@ -61,13 +61,21 @@ Justifica por qué este juego puede considerarse un problema de optimización. C
 
 ### 2. Entorno del agente
 
-Describe el entorno del agente en los términos tratados en la primera unidad didáctica y proyecto de este módulo.
-
-Resume las características del entorno en una tabla con el formato:
-
 Entorno de tareas | Completamente / parcialmente Observable| Agentes | Determinista / Estocástico | Episódico / Secuencial | Estático / Dinámico | Discreto / Continuo
 :---: | :---: | :---: | :---: | :---: | :---: | :---: |
- RPS | - | - | - | - | - |  - |
+ Quién es quién | Parcialmente observable | Multiagente | Determinista | Secuencial | Estático | Episódico |
+
+Parcialmente observable: Al inicio del juego, el personaje que se debe adivinar es una carta que nuestro oponente elige al azar. Así, a medida que avanza el juego, solo podemos ver los personajes que descartamos y los que nos quedan como opciones posibles en nuestro tablero. No podemos ver las características del personaje objetivo ni el tablero del adversario para saber sus opciones restantes.
+
+Multiagente: Durante la partida, es necesaria la interacción con otro jugador, quien formula y responde preguntas para avanzar en la búsqueda del personaje que intentamos adivinar.
+
+Determinista: Aunque puede parecer aleatorio porque el personaje se elige al azar al comienzo del juego, el proceso es determinista. Las preguntas realizadas durante el juego tienen respuestas fijas de "sí" o "no", sin aleatoriedad.
+
+Secuencial: Es un proceso secuencial porque la respuesta de cada pregunta influye en las siguientes. Dependiendo de si la respuesta es "sí" o "no", se eliminan o se mantienen ciertos personajes con diferentes características, lo que afecta la próxima pregunta.
+
+Estático: El entorno del juego es estático, ya que durante las preguntas, el entorno, el tablero y el personaje objetivo no cambian.
+
+Discreto: Es un agente discreto debido a que tiene un número finito de estados. Al seleccionar el personaje, se elige de una baraja con un número limitado de personajes. Además, el número de preguntas también es limitado, dependiendo de las características de los personajes, y las respuestas solo pueden ser "sí" o "no".
 
 ### 3. Algoritmo.
 
@@ -100,6 +108,12 @@ Justifica la representación que has implementado mediante estructuras Prolog.
 
 Repasa los contenidos de mis apuntes Prolog disponibles en [Prolog for IA](https://github.com/dfleta/prolog-for-IA).
 
+### 7. Instalación
+
+```
+https://github.com/yuce/pyswip
+```
+
 ## Entrega
 
 En un proyecto en tu github /gitlab con tu código y la documentación, esta última recogida en el `README` del proyecto y escrita en formato Markdown.
@@ -127,8 +141,8 @@ Sharan, Kishori. _Beginning Java 8 Fundamentals: Language Syntax, Arrays, Data T
 
 Russell, Peter. _ARTIFICIAL INTELLIGENCE : A Modern Approach_, Global Edition. S.L., Pearson Education Limited, 2021.
 
-“Título de la fuente”, Título de recurso contenedor en cursiva, Fecha de publicación. Localización.
-
 @dfleta. "Prolog for IA". _github_, 28 de febrero de 2024. https://github.com/dfleta/prolog-for-IA
 
 @dfleta. "API REST con Flask y Mongo Atlas". _github_, 29 de marzo de 2022. https://github.com/dfleta/ollivanders
+
+@yuce. Latest pyswip prolog version. https://github.com/yuce/pyswip

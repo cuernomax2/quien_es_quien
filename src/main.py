@@ -1,8 +1,8 @@
-from pyswipprolog import Prolog
+from pyswip import Prolog
 import random
 
 prolog = Prolog()
-prolog.consult("src/main.pl")
+prolog.consult("main.pl")
 
 def character_to_find():
     characters = list(prolog.query("personaje(Nombre, Caracteristicas)"))
