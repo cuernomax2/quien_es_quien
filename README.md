@@ -79,7 +79,7 @@ Discreto: Es un agente discreto debido a que tiene un número finito de estados.
 
 ### 3. Algoritmo.
 
-Justifica la adecuacióm del algoritmo de optimización que has seleccionado.
+He observado la cantidad de características que se repiten entre los diferentes personajes y la conclusión a la que he llegado es que había varias que aparecían con más freciencia que otras. He hecho un conteo de todas .....
 
 ### 4. Estrutura del agente
 

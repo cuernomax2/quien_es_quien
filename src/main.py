@@ -11,19 +11,24 @@ def character_to_find(characters):
 
 
 def board(remaining_characters):
+    personajes_restantes = 0
+
     print("Personajes restantes:")
     for personaje in remaining_characters:
         print(f"{personaje["Nombre"]}")
+        personajes_restantes +=1
+    print(f"Quedan {personajes_restantes} personajes en el tablero")
     print("--------------------------------------")
 
 
 def question(win_condition, characteristic):
     if characteristic in win_condition["Caracteristicas"]:
         return True
-    return False
+    else:
+        return False
 
 
-def characteristics(characters):
+def characteristics(characters, selector):
     caracteristica_count = defaultdict(int)
     
     for p in characters:
@@ -31,9 +36,13 @@ def characteristics(characters):
             caracteristica_count[c] += 1
 
     sorted_caracteristicas = sorted(caracteristica_count.items(), key=lambda item: item[1], reverse=True)
+
+    if selector == 1:
+        return sorted_caracteristicas
     
-    middle_index = len(sorted_caracteristicas) // 2
-    return sorted_caracteristicas[middle_index][0]
+    else:
+        middle_index = len(sorted_caracteristicas) // 2
+        return sorted_caracteristicas[middle_index][0]
 
 
 if __name__ == "__main__":
@@ -44,5 +53,8 @@ if __name__ == "__main__":
 
     board(characters)
     print(f"Personaje objetivo --> {win_condition}")
-    print(characteristics(characters))
-    question(win_condition, characteristics(characters))
+    print("--------------------------------------")
+    #print(characteristics(characters, 1)) #Debugging + info
+    print("--------------------------------------")
+    print(characteristics(characters, 420))
+    question(win_condition, characteristics(characters, 420))
