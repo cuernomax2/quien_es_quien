@@ -1,5 +1,4 @@
-
-#### Quién es quién
+### Quién es quién
 =============================
 
 ## Reglas del juego
