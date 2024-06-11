@@ -1,0 +1,10 @@
+# VSCode
+.vscode
+.cache
+*.code-workspace
+
+# Python
+__pycache__
+
+# Pytest
+.pytest_cache
