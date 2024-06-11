@@ -41,7 +41,7 @@ El problema del "quién es quién" se presta bien para ser resuelto usando el pa
 
 ### 5. Base de datos Prolog
 
-Para la represtación de la base de datos he utilizado un archivo .pl (main.pl), que guarda la información necesaria utilizando las reglas de prolog. Cada una de ellas (personaje()) está formada por el nombre del personaje y una lista de las características por las cuáles podemos definir y diferenciar al mismo de los demás personajes del tablero. Ningún personaje utiliza nombres repetidos & características completamente iguales, por lo que no es necesario definir reglas o claves.
+He utilizado un archivo en prolog (main.pl). Cada una de las entradas de dicha base de datos (personaje()) está formada por el nombre del personaje y una lista de las características por las cuáles podemos definir y diferenciar al mismo de los demás personajes del tablero. Ningún personaje utiliza nombres repetidos & características completamente iguales, por lo que no es necesario definir reglas o claves.
 
 ### 6. Instalación
 
