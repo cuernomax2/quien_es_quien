@@ -55,15 +55,16 @@ if __name__ == "__main__":
 
         board(characters)
 
-        if question(win_condition, question_to_ask) == True:
-            print(f"Yes, he does have {question_to_ask}\n")
-            for p in characters:
-                if question_to_ask in p['Caracteristicas']:
-                    candidate_characters.append(p)
-        else:
+        if question(win_condition, question_to_ask) == False:
             print(f"No, he does not have {question_to_ask}\n")
             for p in characters:
                 if question_to_ask not in p['Caracteristicas']:
+                    candidate_characters.append(p)
+
+        else:
+            print(f"Yes, he does have {question_to_ask}\n")
+            for p in characters:
+                if question_to_ask in p['Caracteristicas']:
                     candidate_characters.append(p)
 
         characters = candidate_characters
