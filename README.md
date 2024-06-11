@@ -34,37 +34,26 @@ Discreto: Es un agente discreto debido a que tiene un número finito de estados.
 
 ### 3. Algoritmo.
 
-He observado la cantidad de características que se repiten entre los diferentes personajes y la conclusión a la que he llegado es que había varias que aparecían con más freciencia que otras. He hecho un conteo de todas .....
+He observado la cantidad de características que se repiten entre los diferentes personajes y la conclusión a la que he llegado es que había varias que aparecían con más freciencia que otras. He hecho un conteo de todas las características y he decidido que la forma más óptima de adivinar un personaje es haciendo preguntas que descarten un total de personajes de aproximadamente la mitad
 
-### 4. Estrutura del agente
-
-Nuestro propósito és diseñar el **programa agente** que implementa la **función agente** o la **función que mapea** las percepciones a las acciones. 
-
-A partir del modelo general de agente inteligente de la figura:
-
-![Modelo general agente inteligente](./doc/modelo_AI.png)
-
-**dibuja un modelo adecuado** al entorno de tareas y a un de los cuatro **tipos de programas agente**:
-
-- Agentes reactivos simples.
-- Agentes reactivos basados en modelos.
-- Agentes basados en objetivos.
-- Agentes basados en utilidad.
-
-Cada clase de agente combina componentes particulares de un modo particular para generar las acciones. 
-
-### 5. Programación lógica
+### 4. Programación lógica
 
 El problema del "quién es quién" se presta bien para ser resuelto usando el paradigma de programación lógica debido a la naturaleza declarativa y basada en reglas de este enfoque. La programación lógica (la cual se utiliza en Prolog) permite definir hechos y reglas que describen las relaciones y propiedades de los personajes en el juego. Este paradigma facilita la representación de conocimientos y la realización de inferencias lógicas necesarias para identificar personajes basándose en preguntas y respuestas, lo cual es ideal para este tipo de problema deductivo.
 
-### 6. Base de datos Prolog
+### 5. Base de datos Prolog
 
 Para la represtación de la base de datos he utilizado un archivo .pl (main.pl), que guarda la información necesaria utilizando las reglas de prolog. Cada una de ellas (personaje()) está formada por el nombre del personaje y una lista de las características por las cuáles podemos definir y diferenciar al mismo de los demás personajes del tablero. Ningún personaje utiliza nombres repetidos & características completamente iguales, por lo que no es necesario definir reglas o claves.
 
-### 7. Instalación
+### 6. Instalación
 
 ```
 https://github.com/yuce/pyswip
+```
+
+Tras haber instalado la última versión disponible de pyswip simplemente situarse en la carpeta "src" y utilizar el comando:
+
+```
+python main.py
 ```
 
 ## Bibliografía
