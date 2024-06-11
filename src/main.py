@@ -69,6 +69,5 @@ if __name__ == "__main__":
         characters = candidate_characters
         question_counter += 1
 
-    # Imprimimos el personaje que queda y que debería ser el mismo al personaje objetivo, también mostramos el número de preguntas que hemos necesitado para adivinarlo.
     print(f"The character is: {characters}")
     print(f"Number of questions asked: {question_counter}")
