@@ -77,6 +77,4 @@ Russell, Peter. _ARTIFICIAL INTELLIGENCE : A Modern Approach_, Global Edition. S
 
 @dfleta. "Prolog for IA". _github_, 28 de febrero de 2024. https://github.com/dfleta/prolog-for-IA
 
-@dfleta. "API REST con Flask y Mongo Atlas". _github_, 29 de marzo de 2022. https://github.com/dfleta/ollivanders
-
 @yuce. Latest pyswip prolog version. https://github.com/yuce/pyswip
