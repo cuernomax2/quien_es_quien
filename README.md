@@ -49,8 +49,9 @@ He utilizado un archivo en prolog (main.pl). Cada una de las entradas de dicha b
 ```
 https://github.com/yuce/pyswip
 ```
+Es necesario instalar la última versión estable de swi-prolog y añadirlo al PATH. Puede hacerse desde: https://www.swi-prolog.org/download/stable
 
-Tras haber instalado la última versión disponible de pyswip simplemente situarse en la carpeta "src" y utilizar el comando:
+Tras haber instalado lo anterior simplemente situarse en la carpeta "src" y utilizar el comando:
 
 ```
 python main.py
