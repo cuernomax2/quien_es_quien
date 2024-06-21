@@ -50,74 +50,94 @@ def characteristics(characters): #Optimized function to check average characteri
 
 
 if __name__ == "__main__":
-    question_counter_computer = 0
+    questions_user = []
+    questions_computer = []
     question_counter_user = 0
+    question_counter_computer = 0
     characters = list(prolog.query("personaje(Nombre, Caracteristicas)"))
     win_condition = character_to_find(characters)
 
-### BROKEN / Player versus computer ###
-    # play_against_computer = input("Do you want to play against the computer? y/n --> ")
+    play_against_computer = input("Do you want to play against the computer? y/n --> ")
 
-    # if play_against_computer == ("y" or "Y"):
-    #     valid_characteristics = available_characteristics(characters)
-    #     remaining_characters = []
-    #     remaining_characteristics = []
-    #     question_to_ask = characteristics(characters)
-    #     board(characters)
-    #     print("--------------------------------------")
-
-    #     while len(characters) > 1:
-    #         user_input = input(f"Ask one of the following characteristics: {valid_characteristics} --> ")
-    #         if user_input in valid_characteristics:
-
-    #             if question(win_condition, user_input) == False:
-    #                 print(f"No, he does not have {user_input}\n")
-    #                 for a in characters:
-    #                     if user_input not in a['Caracteristicas']:
-    #                         remaining_characters.append(a)
-    #                         remaining_characteristics.append(a)
-
-    #             else:
-    #                 print(f"Yes, he does have {user_input}\n")
-    #                 for b in characters:
-    #                     if user_input in b['Caracteristicas']:
-    #                         remaining_characters.append(b)
-    #                         remaining_characteristics.append(b)
-
-    #             characters = remaining_characters
-    #             valid_characteristics = remaining_characteristics
-    #             question_counter_computer += 1
-    #             question_counter_user
-    #             board(characters)
-
-    #         else:
-    #             print("Invalid input. Please try again.")
-### BROKEN / Player versus computer###
-
-    #else:     
-    print(f"Personaje objetivo --> {win_condition}")
-    print("--------------------------------------")
-
-    while len(characters) > 1:
-        remaining_characters = []
-        question_to_ask = characteristics(characters)
-
+    if play_against_computer.lower() == "y":
+        valid_characteristics = available_characteristics(characters)
+        remaining_characters = characters.copy()
         board(characters)
+        print("--------------------------------------")
 
-        if question(win_condition, question_to_ask) == False:
-            print(f"No, he does not have {question_to_ask}\n")
-            for a in characters:
-                if question_to_ask not in a['Caracteristicas']:
-                    remaining_characters.append(a)
+        while len(remaining_characters) > 1:
+            user_input = input(f"Ask one of the following characteristics: {valid_characteristics} --> ")
+            if user_input in valid_characteristics:
+                remaining_characters = []
+                if not question(win_condition, user_input):
+                    print(f"No, he does not have {user_input}\n")
+                    for a in characters:
+                        if user_input not in a['Caracteristicas']:
+                            remaining_characters.append(a)
+                else:
+                    print(f"Yes, he does have {user_input}\n")
+                    for b in characters:
+                        if user_input in b['Caracteristicas']:
+                            remaining_characters.append(b)
 
-        else:
-            print(f"Yes, he does have {question_to_ask}\n")
-            for b in characters:
-                if question_to_ask in b['Caracteristicas']:
-                    remaining_characters.append(b)
+                questions_user.append(user_input)
+                characters = remaining_characters.copy()
+                valid_characteristics = available_characteristics(characters)
+                question_counter_user += 1
+                board(characters)
+            else:
+                print("Invalid input. Please try again.")
 
-        characters = remaining_characters
-        question_counter_computer += 1
+        characters = list(prolog.query("personaje(Nombre, Caracteristicas)"))
+        remaining_characters = characters.copy()
 
-    print(f"The character is: {characters}")
-    print(f"Number of questions asked: {question_counter_computer}")
+        while len(characters) > 1:
+            remaining_characters = []
+            question_to_ask = characteristics(characters)
+
+            if question(win_condition, question_to_ask) == False:
+                print(f"No, he does not have {question_to_ask}\n")
+                for a in characters:
+                    if question_to_ask not in a['Caracteristicas']:
+                        remaining_characters.append(a)
+
+            else:
+                print(f"Yes, he does have {question_to_ask}\n")
+                for b in characters:
+                    if question_to_ask in b['Caracteristicas']:
+                        remaining_characters.append(b)
+
+            questions_computer.append(question_to_ask)
+            characters = remaining_characters
+            question_counter_computer += 1
+
+    else:     
+        print(f"Personaje objetivo --> {win_condition}")
+        print("--------------------------------------")
+
+        while len(characters) > 1:
+            remaining_characters = []
+            question_to_ask = characteristics(characters)
+
+            board(characters)
+
+            if question(win_condition, question_to_ask) == False:
+                print(f"No, he does not have {question_to_ask}\n")
+                for a in characters:
+                    if question_to_ask not in a['Caracteristicas']:
+                        remaining_characters.append(a)
+
+            else:
+                print(f"Yes, he does have {question_to_ask}\n")
+                for b in characters:
+                    if question_to_ask in b['Caracteristicas']:
+                        remaining_characters.append(b)
+            questions_computer.append(question_to_ask)
+            characters = remaining_characters
+            question_counter_computer += 1
+
+    print(f"The character is: {characters[0]['Nombre']}")
+    print(f"Characteristics asked by user: {questions_user}")
+    print(f"Number of questions asked by the user: {question_counter_user}")
+    print(f"Characteristics asked by user: {questions_computer}")
+    print(f"Number of questions asked by the computer: {question_counter_computer}")
